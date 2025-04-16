@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Vote, Users, ShieldCheck } from "lucide-react";
@@ -83,7 +82,7 @@ const Statistics = () => {
   ];
 
   return (
-    <section id="statistics" className="py-20 relative">
+    <section id="statistics" className="py-20 relative section-222222 text-white">
       <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0"></div>
       <div className="absolute inset-0 bg-gradient-radial from-blue-500/5 to-purple-500/10 z-0"></div>
       

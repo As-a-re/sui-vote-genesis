@@ -158,4 +158,20 @@
   .secondary-button {
     @apply glass-button text-primary font-medium py-3 px-6 rounded-xl;
   }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, #ae78d2 0%, #ae78d2 100%);
+  }
+
+  .features-gradient {
+    background: linear-gradient(90deg, #0281ee 0%, #d5d4cf 100%);
+  }
+
+  .dark-section {
+    background-color: #000000;
+  }
+
+  .section-222222 {
+    background-color: #222222;
+  }
 }

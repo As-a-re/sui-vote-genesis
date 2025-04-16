@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowDown, Wallet, Info } from "lucide-react";
 
@@ -64,10 +63,9 @@ const connections = [
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-16">
-      {/* Background with grid pattern and gradient overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-50 z-0"></div>
-      <div className="absolute inset-0 bg-gradient-radial from-blue-500/5 to-purple-500/10 z-0"></div>
+    <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-16 hero-gradient">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20 z-0"></div>
       
       <div className="container mx-auto px-4 pt-20 pb-20 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
@@ -177,6 +175,20 @@ const Hero = () => {
           </a>
         </motion.div>
       </div>
+      
+      {/* 3D Floating Image similar to foreverbots.io */}
+      <motion.div
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 hidden lg:block"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <img
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHJvYm90fGVufDB8fHx8MTcxODA2NzQyNXww&ixlib=rb-4.0.3&q=80&w=1080"
+          alt="Blockchain Voting"
+          className="w-full h-auto rounded-lg shadow-2xl"
+        />
+      </motion.div>
     </section>
   );
 };

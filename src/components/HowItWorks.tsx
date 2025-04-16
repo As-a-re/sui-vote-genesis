@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Wallet, Vote, CheckCircle, Search } from "lucide-react";
 
@@ -31,7 +30,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-20 bg-gradient-to-b from-background to-blue-50/30">
+    <section id="how-it-works" className="py-20 dark-section text-white">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center max-w-3xl mx-auto mb-16"
@@ -95,6 +94,20 @@ const HowItWorks = () => {
             })}
           </div>
         </div>
+
+        {/* Add tech image similar to foreverbots.io */}
+        <motion.div
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 hidden lg:block"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <img
+            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTcxODA2NzQyNXww&ixlib=rb-4.0.3&q=80&w=1080"
+            alt="Technology"
+            className="w-full h-auto rounded-lg shadow-2xl"
+          />
+        </motion.div>
       </div>
     </section>
   );

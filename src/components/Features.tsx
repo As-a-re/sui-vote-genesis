@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Shield, Eye, UserCheck, BarChart3 } from "lucide-react";
@@ -71,8 +70,8 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 relative">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30 z-0"></div>
+    <section id="features" className="py-20 relative features-gradient">
+      <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div 
@@ -97,6 +96,19 @@ const Features = () => {
           ))}
         </div>
       </div>
+
+      <motion.div
+        className="absolute left-0 bottom-0 w-1/4 hidden lg:block"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <img
+          src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwdGVjaHxlbnwwfHx8fDE3MTgwNjc0MjV8MA&ixlib=rb-4.0.3&q=80&w=1080"
+          alt="Team Collaboration"
+          className="w-full h-auto rounded-lg shadow-2xl"
+        />
+      </motion.div>
     </section>
   );
 };

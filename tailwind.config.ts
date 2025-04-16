@@ -17,6 +17,10 @@ export default {
 				'2xl': '1400px'
 			}
 		},
+		fontFamily: {
+			'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+			'audiowide': ['Audiowide', 'cursive'],
+		},
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',
@@ -84,11 +88,80 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						transform: 'scale(0.95)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '1',
+						boxShadow: '0 0 10px 2px rgba(101, 85, 255, 0.3)'
+					},
+					'50%': {
+						opacity: '0.8',
+						boxShadow: '0 0 20px 5px rgba(101, 85, 255, 0.6)'
+					}
+				},
+				'flow': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'count-up': {
+					'0%': { content: '"0"' },
+					'20%': { content: '"1"' },
+					'40%': { content: '"2"' },
+					'60%': { content: '"3"' },
+					'80%': { content: '"4"' },
+					'100%': { content: '"5"' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out',
+				'scale-in': 'scale-in 0.3s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'flow': 'flow 6s ease infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'count-up': 'count-up 2s linear forwards'
+			},
+			backgroundImage: {
+				'gradient-sui': 'linear-gradient(to right, #0096FF, #7B61FF)',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'grid-pattern': 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h40v40H0V0zm1 1h38v38H1V1zm1 1h36v36H2V2z\' fill=\'%236366f1\' fill-opacity=\'0.04\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")'
 			}
 		}
 	},

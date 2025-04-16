@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 240 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,16 +13,19 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 225 80% 56%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 265 70% 60%;
     --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --sui-blue: 212 100% 50%;
+    --sui-purple: 262 61% 69%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 258 90% 66%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,7 +35,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.8rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -96,6 +99,63 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    scroll-behavior: smooth;
+  }
+
+  @font-face {
+    font-family: 'Audiowide';
+    src: url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+    font-display: swap;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg;
+  }
+  
+  .glass-card {
+    @apply bg-white/15 backdrop-blur-md border border-white/20 rounded-xl shadow-md transition-all duration-300;
+  }
+  
+  .glass-button {
+    @apply glass hover:bg-white/20 transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+  
+  .glass-input {
+    @apply glass bg-white/5 border border-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/30;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#0096FF] to-[#7B61FF] bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-reverse {
+    @apply bg-gradient-to-r from-[#7B61FF] to-[#0096FF] bg-clip-text text-transparent;
+  }
+  
+  .glow {
+    @apply shadow-[0_0_15px_rgba(123,97,255,0.5)];
+  }
+  
+  .glow-hover {
+    @apply hover:shadow-[0_0_20px_rgba(123,97,255,0.7)] transition-all duration-300;
+  }
+  
+  .bg-grid-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1zm1 1h36v36H2V2z' fill='%236366f1' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .feature-card-hover {
+    @apply hover:-translate-y-2 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-out;
+  }
+  
+  .primary-button {
+    @apply bg-gradient-sui text-white hover:opacity-90 font-medium py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105;
+  }
+  
+  .secondary-button {
+    @apply glass-button text-primary font-medium py-3 px-6 rounded-xl;
   }
 }

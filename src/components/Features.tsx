@@ -7,36 +7,23 @@ const FeatureCard = ({ icon: Icon, title, description, delay }) => {
   
   return (
     <motion.div
-      className="glass-card p-6 feature-card-hover"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      initial={{ opacity: 0, y: 50 }}
+      className="p-6 rounded-xl bg-black border border-white/10 feature-card-hover"
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true, margin: "-50px" }}
     >
-      <div className="mb-4 relative">
-        <div className={`w-12 h-12 rounded-lg flex items-center justify-center bg-gradient-sui glow transition-all duration-300 ${hovered ? 'scale-110' : ''}`}>
-          <Icon size={24} className="text-white" />
-        </div>
-        <motion.div 
-          className="absolute -inset-1 rounded-lg bg-gradient-to-r from-[#0096FF]/40 to-[#7B61FF]/40 blur-sm"
-          animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{ duration: 0.3 }}
-        />
+      <div className="h-12 w-12 rounded-lg bg-gradient-sui flex items-center justify-center mb-5">
+        <Icon size={24} className="text-white" />
       </div>
       
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-foreground/70">{description}</p>
+      <h3 className="text-tech text-white mb-3">
+        {title}
+      </h3>
       
-      {hovered && (
-        <motion.div 
-          className="absolute bottom-0 left-0 h-1 bg-gradient-sui"
-          initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 0.3 }}
-        />
-      )}
+      <p className="font-mono text-sm text-white/70 tracking-wide">
+        {description}
+      </p>
     </motion.div>
   );
 };
@@ -45,32 +32,32 @@ const Features = () => {
   const features = [
     {
       icon: Shield,
-      title: "Uncompromising Security",
-      description: "Built on Sui blockchain with advanced cryptographic protection",
+      title: "UNCOMPROMISING_SECURITY",
+      description: "BUILT ON SUI BLOCKCHAIN WITH ADVANCED CRYPTOGRAPHIC PROTECTION",
       delay: 0.1,
     },
     {
       icon: Eye,
-      title: "Complete Transparency",
-      description: "Every vote is recorded on the blockchain, publicly verifiable",
+      title: "COMPLETE_TRANSPARENCY",
+      description: "EVERY VOTE IS RECORDED ON THE BLOCKCHAIN, PUBLICLY VERIFIABLE",
       delay: 0.2,
     },
     {
       icon: UserCheck,
-      title: "Easy to Use",
-      description: "Simple interface for voters, powerful tools for administrators",
+      title: "EASY_TO_USE",
+      description: "SIMPLE INTERFACE FOR VOTERS, POWERFUL TOOLS FOR ADMINISTRATORS",
       delay: 0.3,
     },
     {
       icon: BarChart3,
-      title: "Instant Results",
-      description: "View voting results in real-time as they're recorded on the blockchain",
+      title: "INSTANT_RESULTS",
+      description: "VIEW VOTING RESULTS IN REAL-TIME AS THEY'RE RECORDED ON THE BLOCKCHAIN",
       delay: 0.4,
     },
   ];
 
   return (
-    <section id="features" className="py-20 relative features-gradient">
+    <section id="features" className="py-20 relative bg-black">
       <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -81,12 +68,12 @@ const Features = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-audiowide">
-            <span className="text-gradient">Why Choose</span> Our Voting Platform
+          <h2 className="text-title-large mb-4">
+            <span className="text-white">WHY_</span>
+            <span className="text-gradient">CHOOSE</span>
           </h2>
-          <p className="text-foreground/70">
-            Our platform leverages Sui blockchain technology to provide a secure and transparent 
-            voting experience that ensures every vote is counted accurately.
+          <p className="font-mono text-white/70 uppercase tracking-wider">
+            OUR PLATFORM LEVERAGES SUI BLOCKCHAIN TECHNOLOGY FOR SECURE AND TRANSPARENT VOTING
           </p>
         </motion.div>
         
@@ -96,19 +83,31 @@ const Features = () => {
           ))}
         </div>
       </div>
-
-      <motion.div
-        className="absolute left-0 bottom-0 w-1/4 hidden lg:block"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwdGVjaHxlbnwwfHx8fDE3MTgwNjc0MjV8MA&ixlib=rb-4.0.3&q=80&w=1080"
-          alt="Team Collaboration"
-          className="w-full h-auto rounded-lg shadow-2xl"
-        />
-      </motion.div>
+      
+      {/* Points display like in Foreverbots */}
+      <div className="mt-20 container mx-auto">
+        <div className="text-center">
+          <h3 className="text-title-medium mb-8">RANK</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="p-4 bg-black border border-white/20 rounded-lg text-center">
+              <div className="text-achievement mb-2">SECURITY</div>
+              <div className="text-points text-gradient">100 Points</div>
+            </div>
+            <div className="p-4 bg-black border border-white/20 rounded-lg text-center">
+              <div className="text-achievement mb-2">SPEED</div>
+              <div className="text-points text-gradient">80 Points</div>
+            </div>
+            <div className="p-4 bg-black border border-white/20 rounded-lg text-center">
+              <div className="text-achievement mb-2">TRANSPARENCY</div>
+              <div className="text-points text-gradient">120 Points</div>
+            </div>
+            <div className="p-4 bg-black border border-white/20 rounded-lg text-center">
+              <div className="text-achievement mb-2">ACCESSIBILITY</div>
+              <div className="text-points text-gradient">90 Points</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

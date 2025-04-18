@@ -1,7 +1,8 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Wallet } from "lucide-react";
+import { Wallet, LayoutDashboard, Vote, PieChart, Settings, User, HelpCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,20 +39,40 @@ const Navbar = () => {
           >
             <div className="w-3 h-3 bg-white rounded-full" />
           </motion.div>
-          <span className="text-xl font-bold text-gradient font-audiowide">SuiVote</span>
+          <Link to="/" className="text-xl font-bold text-gradient font-audiowide">SuiVote</Link>
         </div>
         
         <div className="hidden md:flex items-center space-x-8 text-sm">
-          <a href="#features" className="text-foreground/80 hover:text-foreground transition-colors">Features</a>
-          <a href="#how-it-works" className="text-foreground/80 hover:text-foreground transition-colors">How It Works</a>
-          <a href="#statistics" className="text-foreground/80 hover:text-foreground transition-colors">Statistics</a>
-          <a href="#security" className="text-foreground/80 hover:text-foreground transition-colors">Security</a>
+          <Link to="/dashboard" className="text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2">
+            <LayoutDashboard size={18} />
+            Dashboard
+          </Link>
+          <Link to="/cast-vote" className="text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2">
+            <Vote size={18} />
+            Cast Vote
+          </Link>
+          <Link to="/results" className="text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2">
+            <PieChart size={18} />
+            Results
+          </Link>
+          <Link to="/help" className="text-foreground/80 hover:text-foreground transition-colors flex items-center gap-2">
+            <HelpCircle size={18} />
+            Help
+          </Link>
         </div>
         
-        <button className="primary-button flex items-center space-x-2">
-          <Wallet size={18} />
-          <span>Connect Wallet</span>
-        </button>
+        <div className="flex items-center space-x-4">
+          <Link to="/profile">
+            <button className="secondary-button flex items-center space-x-2">
+              <User size={18} />
+              <span>Profile</span>
+            </button>
+          </Link>
+          <button className="primary-button flex items-center space-x-2">
+            <Wallet size={18} />
+            <span>Connect Wallet</span>
+          </button>
+        </div>
       </div>
     </motion.nav>
   );

@@ -70,7 +70,7 @@ const UserProfile = () => {
                 </div>
                 
                 <div className="text-center md:text-left">
-                  <h2 className="text-2xl font-bold">John Doe</h2>
+                  <h2 className="text-2xl font-bold">Lion Prado</h2>
                   <div className="flex items-center gap-2 mt-1">
                     <Mail className="h-4 w-4 text-muted-foreground" />
                     <p className="text-muted-foreground">john@example.com</p>
@@ -141,7 +141,7 @@ const UserProfile = () => {
                             <Label htmlFor="display-name" className="text-sm font-medium">Display Name</Label>
                             <Input 
                               id="display-name" 
-                              placeholder="johndoe" 
+                              placeholder="lionprado" 
                               className="rounded-lg border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                           </div>

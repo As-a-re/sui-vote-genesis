@@ -184,7 +184,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
       >
         <img
-          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHJvYm90fGVufDB8fHx8MTcxODA2NzQyNXww&ixlib=rb-4.0.3&q=80&w=1080"
+          src="https://unsplash.com/photos/a-sign-that-says-every-vote-counts-on-it-bO3hmqp2C78"
           alt="Blockchain Voting"
           className="w-full h-auto rounded-lg shadow-2xl"
         />

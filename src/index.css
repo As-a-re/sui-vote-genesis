@@ -108,6 +108,12 @@
     src: url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
     font-display: swap;
   }
+  
+  @font-face {
+    font-family: 'Roboto Mono';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+    font-display: swap;
+  }
 }
 
 @layer utilities {
@@ -186,5 +192,46 @@
   .text-on-dark {
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Foreverbots-style text utilities */
+  .text-tech {
+    @apply font-tech uppercase tracking-wider;
+  }
+  
+  .text-command {
+    @apply font-mono text-sm uppercase tracking-wider bg-black text-white px-3 py-1 rounded;
+  }
+  
+  .text-terminal {
+    @apply font-mono text-green-400 bg-black p-4 rounded-lg;
+  }
+  
+  .text-achievement {
+    @apply font-tech uppercase tracking-wider text-2xl;
+  }
+  
+  .text-points {
+    @apply font-mono text-xl font-bold;
+  }
+  
+  .text-title-large {
+    @apply font-tech text-4xl md:text-6xl uppercase tracking-wider;
+  }
+  
+  .text-title-medium {
+    @apply font-tech text-2xl md:text-4xl uppercase tracking-wider;
+  }
+  
+  .text-title-small {
+    @apply font-tech text-xl md:text-2xl uppercase tracking-wider;
+  }
+  
+  .text-underline-tech {
+    @apply relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-primary;
+  }
+  
+  .text-repeated-marquee {
+    @apply whitespace-nowrap overflow-hidden text-tech tracking-wider uppercase;
   }
 }

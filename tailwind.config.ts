@@ -20,6 +20,8 @@ export default {
 		fontFamily: {
 			'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 			'audiowide': ['Audiowide', 'cursive'],
+			'mono': ['Roboto Mono', 'monospace'],
+			'tech': ['Audiowide', 'monospace'],
 		},
 		extend: {
 			colors: {

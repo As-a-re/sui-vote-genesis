@@ -60,7 +60,7 @@ const UserProfile = () => {
                   onMouseLeave={() => setAvatarHover(false)}
                 >
                   <div className="h-24 w-24 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center text-white text-3xl font-bold overflow-hidden relative">
-                    <span>JD</span>
+                    <span>LP</span>
                     {avatarHover && (
                       <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                         <Camera className="h-6 w-6" />
@@ -73,7 +73,7 @@ const UserProfile = () => {
                   <h2 className="text-2xl font-bold">Lion Prado</h2>
                   <div className="flex items-center gap-2 mt-1">
                     <Mail className="h-4 w-4 text-muted-foreground" />
-                    <p className="text-muted-foreground">john@example.com</p>
+                    <p className="text-muted-foreground">lion@example.com</p>
                   </div>
                   <div className="flex items-center gap-2 mt-4">
                     <div className="flex items-center gap-1 px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-medium">
@@ -132,7 +132,7 @@ const UserProfile = () => {
                             <Label htmlFor="name" className="text-sm font-medium">Full Name</Label>
                             <Input 
                               id="name" 
-                              placeholder="John Doe" 
+                              placeholder="Lion Prado" 
                               className="rounded-lg border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                           </div>
@@ -152,7 +152,7 @@ const UserProfile = () => {
                           <Input 
                             id="email" 
                             type="email" 
-                            placeholder="john@example.com" 
+                            placeholder="lion@example.com" 
                             className="rounded-lg border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           />
                         </div>

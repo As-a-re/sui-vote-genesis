@@ -63,31 +63,30 @@ const connections = [
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-16 hero-gradient">
+    <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-16 bg-black">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20 z-0"></div>
       
       <div className="container mx-auto px-4 pt-20 pb-20 relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-audiowide"
+            className="text-title-large mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-gradient">Decentralized Voting</span>
+            <span className="text-white">Decentralized</span>
             <br />
-            <span>Powered by <span className="text-gradient-reverse">Sui Blockchain</span></span>
+            <span className="text-gradient">Voting</span>
           </motion.h1>
           
           <motion.p 
-            className="text-lg md:text-xl text-foreground/70 mb-10"
+            className="font-mono text-lg md:text-xl text-white/70 mb-10 uppercase tracking-wider"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Secure, transparent, and immutable voting system. 
-            Every vote counts and every transaction is verifiable.
+            Secure, transparent, and immutable voting system
           </motion.p>
           
           <motion.div 
@@ -96,14 +95,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <button className="primary-button flex items-center justify-center space-x-2">
-              <Wallet size={18} />
-              <span>Connect Wallet</span>
+            <button className="text-command hover:bg-white hover:text-black transition-colors duration-300 px-6 py-3">
+              <span>CONNECT_WALLET</span>
             </button>
             
-            <button className="secondary-button flex items-center justify-center space-x-2">
-              <Info size={18} />
-              <span>Learn More</span>
+            <button className="text-command bg-transparent border border-white hover:bg-white hover:text-black transition-colors duration-300 px-6 py-3">
+              <span>LEARN_MORE</span>
             </button>
           </motion.div>
         </div>
@@ -163,9 +160,9 @@ const Hero = () => {
         >
           <a 
             href="#features" 
-            className="text-foreground/50 hover:text-foreground flex flex-col items-center"
+            className="text-white/50 hover:text-white flex flex-col items-center font-mono uppercase tracking-wider"
           >
-            <span className="text-sm mb-2">Discover More</span>
+            <span className="text-sm mb-2">Discover_More</span>
             <motion.div
               animate={{ y: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
@@ -189,6 +186,14 @@ const Hero = () => {
           className="w-full h-auto rounded-lg shadow-2xl"
         />
       </motion.div>
+      
+      {/* Repeated text marquee like in Foreverbots */}
+      <div className="absolute bottom-0 w-full overflow-hidden py-4 bg-black">
+        <div className="text-repeated-marquee animate-flow">
+          SECURE VOTING X BLOCKCHAIN VERIFIED X SUI POWERED X SECURE VOTING X BLOCKCHAIN VERIFIED X SUI POWERED X
+          SECURE VOTING X BLOCKCHAIN VERIFIED X SUI POWERED X SECURE VOTING X BLOCKCHAIN VERIFIED X SUI POWERED X
+        </div>
+      </div>
     </section>
   );
 };

@@ -181,7 +181,7 @@ const Hero = () => {
         transition={{ duration: 1 }}
       >
         <img
-          src=""
+          src="/sv.jpg"
           alt="Blockchain Voting"
           className="w-full h-auto rounded-lg shadow-2xl"
         />

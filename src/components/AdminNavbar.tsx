@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { 
   Activity, 
   BarChart2, 
@@ -12,7 +12,8 @@ import {
   Settings, 
   Shield, 
   User, 
-  Users 
+  Users,
+  AlertTriangle 
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +27,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const AdminNavbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +42,10 @@ const AdminNavbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <header
@@ -56,19 +62,40 @@ const AdminNavbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-6">
-          <Link to="/admin" className="text-sm font-medium hover:text-blue-600 transition-colors">
+          <Link 
+            to="/admin" 
+            className={`text-sm font-medium hover:text-blue-600 transition-colors ${isActive('/admin') ? 'text-blue-600' : ''}`}
+          >
             Dashboard
           </Link>
-          <Link to="/admin/proposals" className="text-sm font-medium hover:text-blue-600 transition-colors">
+          <Link 
+            to="/admin/proposals" 
+            className={`text-sm font-medium hover:text-blue-600 transition-colors ${isActive('/admin/proposals') ? 'text-blue-600' : ''}`}
+          >
             Proposals
           </Link>
-          <Link to="/admin/users" className="text-sm font-medium hover:text-blue-600 transition-colors">
+          <Link 
+            to="/admin/users" 
+            className={`text-sm font-medium hover:text-blue-600 transition-colors ${isActive('/admin/users') ? 'text-blue-600' : ''}`}
+          >
             Users
           </Link>
-          <Link to="/admin/analytics" className="text-sm font-medium hover:text-blue-600 transition-colors">
+          <Link 
+            to="/admin/analytics" 
+            className={`text-sm font-medium hover:text-blue-600 transition-colors ${isActive('/admin/analytics') ? 'text-blue-600' : ''}`}
+          >
             Analytics
           </Link>
-          <Link to="/admin/settings" className="text-sm font-medium hover:text-blue-600 transition-colors">
+          <Link 
+            to="/admin/emergency" 
+            className={`text-sm font-medium hover:text-red-600 transition-colors ${isActive('/admin/emergency') ? 'text-red-600' : ''}`}
+          >
+            Emergency
+          </Link>
+          <Link 
+            to="/admin/settings" 
+            className={`text-sm font-medium hover:text-blue-600 transition-colors ${isActive('/admin/settings') ? 'text-blue-600' : ''}`}
+          >
             Settings
           </Link>
         </div>
@@ -140,6 +167,10 @@ const AdminNavbar = () => {
                 <Link to="/admin/analytics" className="flex items-center gap-3 text-sm font-medium hover:text-blue-600 transition-colors">
                   <BarChart2 className="h-4 w-4" />
                   Analytics
+                </Link>
+                <Link to="/admin/emergency" className="flex items-center gap-3 text-sm font-medium hover:text-red-600 transition-colors">
+                  <AlertTriangle className="h-4 w-4" />
+                  Emergency
                 </Link>
                 <Link to="/admin/settings" className="flex items-center gap-3 text-sm font-medium hover:text-blue-600 transition-colors">
                   <Settings className="h-4 w-4" />

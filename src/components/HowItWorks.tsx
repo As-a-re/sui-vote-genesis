@@ -103,7 +103,7 @@ const HowItWorks = () => {
           transition={{ duration: 1 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTcxODA2NzQyNXww&ixlib=rb-4.0.3&q=80&w=1080"
+            src="/sv.jpg"
             alt="Technology"
             className="w-full h-auto rounded-lg shadow-2xl"
           />
